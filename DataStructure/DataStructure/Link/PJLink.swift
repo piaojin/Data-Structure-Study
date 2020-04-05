@@ -61,14 +61,19 @@ struct PJLink<T: Equatable> {
     }
     
     func node(at index: Int) -> PJNode<T>? {
-        assert((index >= 0 && index < count), "index \(index) out of range \(count).")
+        if index >= 0, index < count {
+            fatalError("index \(index) out of range \(count).")
+        }
+        
         var tempNode: PJNode<T>? = head
+        
         for i in 0..<count {
             if i == index {
                 break
             }
             tempNode = tempNode?.next
         }
+        
         return tempNode
     }
     
@@ -82,7 +87,10 @@ struct PJLink<T: Equatable> {
     }
     
     mutating func insert(node: PJNode<T>, atIndex: Int) {
-        assert(atIndex >= 0, "atIndex should >= 0")
+        if atIndex >= 0 {
+            fatalError("atIndex should >= 0")
+        }
+        
         if atIndex == 0 {
             if !isEmpty() {
                 node.next = head
@@ -150,7 +158,10 @@ struct PJLink<T: Equatable> {
     
     @discardableResult
     mutating func remove(at index: Int) -> PJNode<T>? {
-        assert(index >= 0 && index < count, "index \(index) out of range")
+        if index >= 0 && index < count {
+            fatalError("index \(index) out of range")
+        }
+        
         var tempNode: PJNode<T>? = head
         var toRemovedNode: PJNode<T>?
         

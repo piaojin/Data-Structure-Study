@@ -15,6 +15,11 @@
 		CA2D25A724387612005E0F9F /* PJLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2D25A624387612005E0F9F /* PJLink.swift */; };
 		CA2D25A924388D5B005E0F9F /* LinkTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2D25A824388D5B005E0F9F /* LinkTestCases.swift */; };
 		CA2D25AA24388DA6005E0F9F /* PJLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2D25A624387612005E0F9F /* PJLink.swift */; };
+		CAF5E6152439BCB900EBFD5D /* PJStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF5E6142439BCB900EBFD5D /* PJStack.swift */; };
+		CAF5E6162439BCB900EBFD5D /* PJStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF5E6142439BCB900EBFD5D /* PJStack.swift */; };
+		CAF5E6182439C44600EBFD5D /* StackTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF5E6172439C44600EBFD5D /* StackTestCases.swift */; };
+		CAF5E61A2439C7CF00EBFD5D /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF5E6192439C7CF00EBFD5D /* Queue.swift */; };
+		CAF5E61B2439C7CF00EBFD5D /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF5E6192439C7CF00EBFD5D /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,9 @@
 		CA2D2595243789E7005E0F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA2D25A624387612005E0F9F /* PJLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PJLink.swift; sourceTree = "<group>"; };
 		CA2D25A824388D5B005E0F9F /* LinkTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkTestCases.swift; sourceTree = "<group>"; };
+		CAF5E6142439BCB900EBFD5D /* PJStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PJStack.swift; sourceTree = "<group>"; };
+		CAF5E6172439C44600EBFD5D /* StackTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTestCases.swift; sourceTree = "<group>"; };
+		CAF5E6192439C7CF00EBFD5D /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 				CA2D2588243789E6005E0F9F /* DataStructureTests.swift */,
 				CA2D258A243789E6005E0F9F /* Info.plist */,
 				CA2D25A824388D5B005E0F9F /* LinkTestCases.swift */,
+				CAF5E6172439C44600EBFD5D /* StackTestCases.swift */,
 			);
 			path = DataStructureTests;
 			sourceTree = "<group>";
@@ -142,6 +151,7 @@
 		CA2D25A224378A6A005E0F9F /* Stack */ = {
 			isa = PBXGroup;
 			children = (
+				CAF5E6142439BCB900EBFD5D /* PJStack.swift */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -149,6 +159,7 @@
 		CA2D25A324378A71005E0F9F /* Queue */ = {
 			isa = PBXGroup;
 			children = (
+				CAF5E6192439C7CF00EBFD5D /* Queue.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -300,6 +311,8 @@
 			files = (
 				CA2D2578243789E6005E0F9F /* AppDelegate.swift in Sources */,
 				CA2D25A724387612005E0F9F /* PJLink.swift in Sources */,
+				CAF5E6152439BCB900EBFD5D /* PJStack.swift in Sources */,
+				CAF5E61A2439C7CF00EBFD5D /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAF5E6162439BCB900EBFD5D /* PJStack.swift in Sources */,
+				CAF5E61B2439C7CF00EBFD5D /* Queue.swift in Sources */,
 				CA2D2589243789E6005E0F9F /* DataStructureTests.swift in Sources */,
+				CAF5E6182439C44600EBFD5D /* StackTestCases.swift in Sources */,
 				CA2D25A924388D5B005E0F9F /* LinkTestCases.swift in Sources */,
 				CA2D25AA24388DA6005E0F9F /* PJLink.swift in Sources */,
 			);
