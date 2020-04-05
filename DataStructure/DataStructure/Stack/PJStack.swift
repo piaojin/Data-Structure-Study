@@ -17,7 +17,9 @@ struct PJStack<T: Equatable> {
     var array: [T] = []
     
     init(size: Int) {
-        assert(size >= minSize, "size \(size) should >= minSize of \(minSize)")
+        if size >= minSize {
+            fatalError("size \(size) should >= minSize of \(minSize)")
+        }
         self.size = size
     }
     
