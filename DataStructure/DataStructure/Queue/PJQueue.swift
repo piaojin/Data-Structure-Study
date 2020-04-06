@@ -22,19 +22,19 @@ struct PJQueue<T: Equatable> {
     /**[T] cannot create [T](repeating: T object, count: capacity), so use [T?]*/
     var array: [T?] = []
     
-    init(capacity: Int) {
-        self.capacity = capacity
-        array = [T?](repeating: nil, count: capacity)
-    }
-    
     /**front == rear or size == 0*/
-    func isEmpty() -> Bool {
+    var isEmpty: Bool {
         return size == 0
     }
     
     /**(rear+1) % MAXSIZE == front or size == capacity*/
-    func isFull() -> Bool {
+    var isFull: Bool {
         return size == capacity
+    }
+    
+    init(capacity: Int) {
+        self.capacity = capacity
+        array = [T?](repeating: nil, count: capacity)
     }
     
     mutating func removeAll() {
@@ -45,7 +45,7 @@ struct PJQueue<T: Equatable> {
     
     /**Enter queue*/
     mutating func enQueue(element: T) {
-        if isFull() {
+        if isFull {
             fatalError("Queue is full")
         }
         array[rear] = element
@@ -56,7 +56,7 @@ struct PJQueue<T: Equatable> {
     
     /**Out of queue*/
     mutating func frontAndDeQueue() -> T {
-        if isEmpty() {
+        if isEmpty {
             fatalError("Queue is empty.")
         }
         let data = array[front]

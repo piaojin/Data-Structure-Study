@@ -11,33 +11,33 @@ import XCTest
 class StackTestCases: XCTestCase {
 
     func testEmptyAndFull() {
-        var stack = PJStack<Int>(size: 5)
+        var stack = PJStack<Int>(capacity: 5)
         
-        XCTAssert(stack.isEmpty(), "Test empty and full failure")
+        XCTAssert(stack.isEmpty, "Test empty and full failure")
         
-        for i in 0..<stack.size {
+        for i in 0..<stack.capacity {
             stack.push(element: i)
         }
         
-        XCTAssert(stack.isFull(), "Test empty and full failure")
+        XCTAssert(stack.isFull, "Test empty and full failure")
     }
     
     func testRemoveAll() {
-        var stack = PJStack<Int>(size: 5)
+        var stack = PJStack<Int>(capacity: 5)
         
-        for i in 0..<stack.size {
+        for i in 0..<stack.capacity {
             stack.push(element: i)
         }
         
-        XCTAssert(stack.isFull(), "Test removeAll failure")
+        XCTAssert(stack.isFull, "Test removeAll failure")
         
         stack.removeAll()
         
-        XCTAssert(stack.isEmpty(), "Test removeAll failure")
+        XCTAssert(stack.isEmpty, "Test removeAll failure")
     }
     
     func testPushAndPop() {
-        var stack = PJStack<Int>(size: 5)
+        var stack = PJStack<Int>(capacity: 5)
         
         stack.push(element: 6)
         

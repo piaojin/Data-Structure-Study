@@ -8,14 +8,6 @@
 
 import Cocoa
 
-struct PJLinkError: Error {
-    var errorInfor: String
-
-    init(_ errorInfor: String) {
-        self.errorInfor = errorInfor
-    }
-}
-
 class PJNode<T: Equatable>: NSObject {
     var element: T
     
@@ -31,6 +23,10 @@ struct PJLink<T: Equatable> {
     var head: PJNode<T>?
     
     var count: Int = 0
+    
+    private var isEmpty: Bool {
+        return head == nil
+    }
     
     func find(with element: T) -> PJNode<T>? {
         if element == head?.element {
@@ -92,13 +88,13 @@ struct PJLink<T: Equatable> {
         }
         
         if atIndex == 0 {
-            if !isEmpty() {
+            if !isEmpty {
                 node.next = head
             }
             head = node
             count += 1
         } else {
-            if isEmpty() {
+            if isEmpty {
                 head = node
                 count += 1
             } else if atIndex > count {
@@ -119,7 +115,7 @@ struct PJLink<T: Equatable> {
     }
     
     mutating func append(node: PJNode<T>) {
-        if isEmpty() {
+        if isEmpty {
             head = node
             count += 1
             return
@@ -180,10 +176,6 @@ struct PJLink<T: Equatable> {
             tempNode = tempNode?.next
         }
         return toRemovedNode
-    }
-    
-    private func isEmpty() -> Bool {
-        return head == nil
     }
     
     private func isLast(node: PJNode<T>) -> Bool {

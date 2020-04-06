@@ -13,7 +13,7 @@ class QueueTestCases: XCTestCase {
     func testEmptyAndFull() {
         var queue: PJQueue = PJQueue<Int>(capacity: 6)
         
-        XCTAssert(queue.isEmpty(), "Test empty and full failure")
+        XCTAssert(queue.isEmpty, "Test empty and full failure")
         
         for i in 0..<queue.capacity {
             queue.enQueue(element: i)
@@ -21,7 +21,7 @@ class QueueTestCases: XCTestCase {
         
         queue.printQueue()
         
-        XCTAssert(queue.isFull() && queue.size == queue.capacity, "Test empty and full failure")
+        XCTAssert(queue.isFull && queue.size == queue.capacity, "Test empty and full failure")
     }
     
     func testEnQueue() {
@@ -39,6 +39,6 @@ class QueueTestCases: XCTestCase {
         queue.enQueue(element: 1)
         
         XCTAssert(queue.frontAndDeQueue() == 0, "Test enQueue failure")
-        XCTAssert(queue.frontAndDeQueue() == 1 && queue.isEmpty() , "Test enQueue failure")
+        XCTAssert(queue.frontAndDeQueue() == 1 && queue.isEmpty, "Test enQueue failure")
     }
 }

@@ -11,61 +11,73 @@ import Cocoa
 let emptyTOS: Int = -1
 
 struct PJStack<T: Equatable> {
+    
     let minSize: Int = 5
-    var size: Int = 0
-    var top: Int = emptyTOS
+    
+    var capacity: Int = 0 /**The max size of queue*/
+    
+    var size: Int {
+        return array.count
+    }
+    
     var array: [T] = []
     
-    init(size: Int) {
-        if size >= minSize {
-            fatalError("size \(size) should >= minSize of \(minSize)")
+    var isEmpty: Bool {
+        return size == 0
+    }
+    
+    var isFull: Bool {
+        return array.count == capacity
+    }
+    
+    init(capacity: Int) {
+        if capacity < minSize {
+            fatalError("capacity \(capacity) should >= minSize of \(minSize)")
         }
-        self.size = size
-    }
-    
-    func isEmpty() -> Bool {
-        return top == emptyTOS
-    }
-    
-    func isFull() -> Bool {
-        return top == size - 1
+        self.capacity = capacity
     }
     
     mutating func removeAll() {
         array.removeAll()
-        top = emptyTOS
     }
     
     mutating func push(element: T) {
-        if isFull() {
+        if isFull {
             fatalError("PJStack is full.")
-        }
-        if !isFull() {
-            array.append(element)
-            top += 1
+        } else {
+            array.insert(element, at: 0)
         }
     }
     
     func topOfStack() -> T {
-        if isEmpty() {
+        if isEmpty {
             fatalError("PJStack is empty.")
         }
-        return array[top]
+        
+        if let first = array.first {
+            return first
+        } else {
+            fatalError("Top is nil.")
+        }
     }
     
     mutating func pop() {
-        if isEmpty() {
+        if isEmpty {
             fatalError("PJStack is empty.")
         }
-        top -= 1
+        array.remove(at: 0)
     }
     
     mutating func topAndPop() -> T {
-        if isEmpty() {
+        if isEmpty {
             fatalError("PJStack is empty.")
         }
-        let data = array[top]
-        top -= 1
-        return data
+        
+        if let first = array.first {
+            array.remove(at: 0)
+            return first
+        } else {
+            fatalError("Top is nil.")
+        }
     }
 }
